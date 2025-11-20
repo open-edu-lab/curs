@@ -4,11 +4,183 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>김가현 - 오류중학교</title>
+    <title>김가현 - 오류중학교 기술교사</title>
     <meta name="description" content="김가현 | 오류중학교 기술 교사 | 개발 공부 중" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <h1 class="logo">김가현</h1>
+          <nav class="nav">
+            <a href="#about" class="nav-link">소개</a>
+            <a href="#skills" class="nav-link">기술</a>
+            <a href="#projects" class="nav-link">프로젝트</a>
+            <a href="#contact" class="nav-link">연락</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="hero" class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <h2 class="hero-title">안녕하세요,<br/>개발을 공부하는<br/>기술교사 김가현입니다.</h2>
+              <p class="hero-description">
+                오류중학교에서 학생들을 가르치며,<br/>
+                AI 융합교육과 데이터 분석을 공부하고 있습니다.
+              </p>
+              <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">연락하기</a>
+                <a href="#projects" class="btn btn-secondary">프로젝트 보기</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="container">
+            <h3 class="section-title">About Me</h3>
+            <div class="about-content">
+              <p class="about-text">
+                오류중학교에서 기술 교과를 가르치며, 학생들에게 AI와 기술의 즐거움을 전하고 있습니다.
+                STEAM 교육과 데이터 분석을 공부하며, 교육과 기술을 연결하는 방법을 모색하고 있습니다.
+              </p>
+              <div class="about-tags">
+                <span class="tag">기술교사</span>
+                <span class="tag">AI 융합교육</span>
+                <span class="tag">데이터 분석</span>
+                <span class="tag">STEAM</span>
+                <span class="tag">교육 혁신</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section section-alt">
+          <div class="container">
+            <h3 class="section-title">Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <h4 class="skill-title">Programming</h4>
+                <ul class="skill-list">
+                  <li>Python</li>
+                  <li>R / Quarto</li>
+                  <li>TypeScript</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h4 class="skill-title">Data Analysis</h4>
+                <ul class="skill-list">
+                  <li>데이터 시각화</li>
+                  <li>통계 분석</li>
+                  <li>R Shiny</li>
+                  <li>빅데이터 분석</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h4 class="skill-title">Education</h4>
+                <ul class="skill-list">
+                  <li>AI 융합교육</li>
+                  <li>STEAM 커리큘럼</li>
+                  <li>교육용 웹 개발</li>
+                  <li>발명교육</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h4 class="skill-title">Tools</h4>
+                <ul class="skill-list">
+                  <li>Git / GitHub</li>
+                  <li>Vite</li>
+                  <li>Netlify</li>
+                  <li>Unity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="container">
+            <h3 class="section-title">Projects</h3>
+            <div class="projects-grid">
+              <div class="project-card">
+                <h4 class="project-title">인구구조 데이터 분석 대시보드</h4>
+                <p class="project-description">
+                  R과 Quarto를 활용한 한국 인구 데이터 시각화 프로젝트. 
+                  고령화, 비만율, 질병 발생률 간의 관계를 분석합니다.
+                </p>
+                <div class="project-tags">
+                  <span class="tag-sm">R</span>
+                  <span class="tag-sm">Quarto</span>
+                  <span class="tag-sm">데이터 시각화</span>
+                </div>
+              </div>
+              <div class="project-card">
+                <h4 class="project-title">AI 발명교육 커리큘럼</h4>
+                <p class="project-description">
+                  특허청 AI 도구를 활용한 생체모방 발명 챌린지 프로그램.
+                  중학생 대상 AI 통합 발명교육 자료를 개발했습니다.
+                </p>
+                <div class="project-tags">
+                  <span class="tag-sm">교육</span>
+                  <span class="tag-sm">AI</span>
+                  <span class="tag-sm">STEAM</span>
+                </div>
+              </div>
+              <div class="project-card">
+                <h4 class="project-title">특허 검색 웹 애플리케이션</h4>
+                <p class="project-description">
+                  특허청 API를 활용한 특허 검색 시스템과 
+                  AI 스케치 향상 도구를 통합한 교육용 웹 앱입니다.
+                </p>
+                <div class="project-tags">
+                  <span class="tag-sm">Web</span>
+                  <span class="tag-sm">API</span>
+                  <span class="tag-sm">AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+          <div class="container">
+            <h3 class="section-title">Contact</h3>
+            <div class="contact-content">
+              <p class="contact-text">
+                프로젝트 협업이나 교육 관련 문의는 언제든 환영합니다.
+              </p>
+              <div class="contact-links">
+                <a href="mailto:your.email@example.com" class="contact-link">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Email
+                </a>
+                <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2024 김가현. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
