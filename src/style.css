@@ -1,142 +1,210 @@
-:root{
-  --bg:#f6f8fa;
-  --card:#ffffff;
-  --accent:#0066ff;
-  --text:#111827;
-  --muted:#6b7280;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+/* style.css */
+
+/* 1. 기본 설정 및 변수 정의 */
+:root {
+  --bg: #f0f2f5;           /* 배경색: 눈이 편한 회색 */
+  --card: #ffffff;         /* 카드색: 흰색 */
+  --accent: #2563eb;       /* 강조색: 신뢰감을 주는 블루 (교육/기술) */
+  --text-main: #1f2937;    /* 본문 텍스트 */
+  --text-sub: #6b7280;     /* 보조 텍스트 */
+  --border: #e5e7eb;       /* 테두리 색상 */
+  
+  /* 폰트: 한글 가독성을 위해 Noto Sans KR 등을 포함 */
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-html,body,#app{
-  height:100%;
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
+/* 2. 레이아웃 초기화 */
+* {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  padding: 20px;
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 100%;
+  /* 기존 text-align: center 제거 -> 가독성을 위해 왼쪽 정렬 권장 */
+}
+
+/* 3. 카드(Card) 스타일 */
+.card {
+  max-width: 600px; /* 명함/프로필에 적절한 너비 */
   margin: 0 auto;
-  padding: 2rem;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 40px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  border: 1px solid var(--border);
+}
+
+/* 4. 헤더 & 아바타 영역 */
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* 원형 프로필 */
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.role {
+  margin: 4px 0 2px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact {
+  margin: 0;
+  color: var(--text-sub);
+  font-size: 0.85rem;
+}
+
+/* 5. 섹션 공통 스타일 */
+section {
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+h2::before {
+  /* 제목 옆에 작은 포인트 바 추가 */
+  content: '';
+  display: block;
+  width: 4px;
+  height: 16px;
+  background-color: var(--accent);
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-sub);
+  font-size: 0.95rem;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* 6. 기술 스택 (Chips) 스타일 */
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* 화면이 작으면 줄바꿈 */
+  gap: 8px;
+  margin: 0;
+}
+
+.chips li {
+  background: #eff6ff; /* 연한 파란색 배경 */
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0; /* 기본 li 마진 제거 */
+  transition: all 0.2s ease;
+}
+
+.chips li:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* 7. 푸터 */
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
   text-align: center;
+  color: var(--text-sub);
+  font-size: 0.85rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card{
-  max-width:760px;
-  margin:40px auto;
-  background:var(--card);
-  border-radius:12px;
-  box-shadow:0 6px 24px rgba(15,23,42,0.08);
-  padding:28px;
-}
-
-.header{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  margin-bottom:18px;
-}
-
-.avatar{
-  width:96px;
-  height:96px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#e2e8f0,#c7d2fe);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-weight:600;
-}
-
-.name{
-  margin:0;
-  font-size:1.4rem;
-}
-
-.role{ margin:4px 0; color:var(--accent); font-weight:600; }
-
-.contact{ margin:0; color:var(--muted); font-size:0.9rem; }
-
-h2{
-  margin:14px 0 8px;
-  font-size:1.05rem;
-}
-
-.chips{ list-style:none; padding:0; display:flex; gap:8px; margin:6px 0 0; }
-.chips li{
-  background:#f1f5f9;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:0.9rem;
-  color:var(--muted);
-}
-
-.footer{ margin-top:18px; color:var(--muted); font-size:0.95rem; }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
   }
-  a:hover {
-    color: #747bff;
+  .header {
+    flex-direction: column;
+    text-align: center;
   }
-  button {
-    background-color: #f9f9f9;
+  .meta {
+    align-items: center;
+  }
+  h2::before {
+    display: none; /* 모바일에서는 포인트 바 숨김 */
+  }
+  h2 {
+    justify-content: center; /* 제목 가운데 정렬 */
+  }
+  p, ul {
+    text-align: left; /* 본문은 왼쪽 정렬 유지 */
   }
 }
